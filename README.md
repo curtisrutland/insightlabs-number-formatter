@@ -1,1 +1,3 @@
-# insightlabs-number-formatter
+# @insightlabs/number-formatter
+
+Number formatting helpers.

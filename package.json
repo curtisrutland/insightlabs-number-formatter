@@ -1,0 +1,16 @@
+{
+  "name": "@insightlabs/number-formatter",
+  "version": "0.0.1",
+  "description": "Helper for formatting numbers as currency, fixed, or percentages",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "Curtis Rutland",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.4.5"
+  }
+}
