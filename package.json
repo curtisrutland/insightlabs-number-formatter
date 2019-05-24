@@ -17,5 +17,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/curtisrutland/insightlabs-number-formatter.git"
-  }
+  },
+  "private": false
 }
