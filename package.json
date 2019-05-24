@@ -12,5 +12,10 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^3.4.5"
+  },
+  "homepage": "https://github.com/curtisrutland/insightlabs-number-formatter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/curtisrutland/insightlabs-number-formatter.git"
   }
 }
