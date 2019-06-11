@@ -32,6 +32,15 @@ export declare class Formatter {
      * @returns formatted result. Example: asFixed(123456.789, 1) => "123,456.8"
      */
     asFixed(val: number, decimals: number, useSeparator?: boolean, defaultValue?: string): string | undefined;
+    /**
+     * Formats a number/string as a phone number
+     *
+     * @param val the number to format
+     * @param defaultValue default value returned if val is null, undefined, or not a number or string
+     * @param separator string to separate phone number parts. defautls to "-"
+     * @returns formatted result. Example: asPhoneNumber(1234567890) => "123-456-7890"
+     */
+    asPhoneNumber(val: number | string | null | undefined, defaultValue?: string, separator?: string): string | undefined;
     private validateValue;
     private createOpts;
 }

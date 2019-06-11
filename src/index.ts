@@ -68,6 +68,31 @@ export class Formatter {
         }
     }
 
+    /**
+     * Formats a number/string as a phone number
+     * 
+     * @param val the number to format
+     * @param defaultValue default value returned if val is null, undefined, or not a number or string
+     * @param separator string to separate phone number parts. defautls to "-"
+     * @returns formatted result. Example: asPhoneNumber(1234567890) => "123-456-7890"
+     */
+    asPhoneNumber(val: number | string | null | undefined, defaultValue?: string, separator = "-") {
+        if (val == null) return defaultValue;
+        if (typeof val === "number")
+            val = val.toString();
+        if (typeof val !== "string")
+            return defaultValue;
+        if (val.length === 7) {
+            return `${val.substr(0, 3)}${separator}${val.substr(3)}`;
+        } else if (val.length === 10) {
+            return `${val.substr(0, 3)}${separator}${val.substr(3, 3)}${separator}${val.substr(6)}`;
+        } else if (val.length === 11) {
+            return `${val.substr(0, 1)}${separator}${val.substr(1, 3)}${separator}${val.substr(4, 3)}${separator}${val.substr(7)}`;
+        } else {
+            return val;
+        }
+    }
+
     private validateValue(val?: number | string): number | false {
         if (val == null) {
             console.warn("formatter provided an invalid val.", val);

@@ -51,3 +51,15 @@ const result = format.asFixed(123456.789, 1);
 const year = format.asFixed(1984, 0, false); //no separator
 //year = "1984";
 ```
+
+### Format as Phone Number
+```javascript
+const result = format.asPhoneNumber(5128675309);
+//result = "512-867-5309"
+//or 
+const result = format.asPhoneNumber(5128675309, "", ".");
+//result = "512.867.5309"
+//or
+const result = format.asPhoneNumber(nonNumberOrString, "N/A");
+//result = "N/A"
+```
