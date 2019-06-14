@@ -63,3 +63,14 @@ const result = format.asPhoneNumber(5128675309, "", ".");
 const result = format.asPhoneNumber(nonNumberOrString, "N/A");
 //result = "N/A"
 ```
+
+### Format as Date
+```javascript
+const d = new Date();
+const date = format.asDate(d);
+//date = "6/14/2019"
+const time = format.asTime(d);
+//time = "1:22:55 PM"
+const datetime = format.asDateTime(d);
+//datetime = "6/14/2019 1:22:37 PM"
+```
