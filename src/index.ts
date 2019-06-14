@@ -69,6 +69,57 @@ export class Formatter {
     }
 
     /**
+     * Formats a Date or time number as a locale Date string. 
+     * 
+     * @param val the Date to format
+     * @param defaultValue the default value if the formatting fails
+     * @returns formatted result. Example: asDate(new Date()) => "6/14/2019"
+     */
+    asDate(val: Date | number, defaultValue?: string) {
+        let d: Date;
+        if(typeof val === "number")
+            d = new Date(val);
+        else if (!(val instanceof Date))
+            return defaultValue;
+        else d = val;
+        return d.toLocaleDateString(this.locale);
+    }
+
+    /**
+     * Formats a Date or time number as a locale Time string. 
+     * 
+     * @param val the Date to format
+     * @param defaultValue the default value if the formatting fails
+     * @returns formatted result. Example: asDate(new Date()) => "1:22:55 PM"
+     */
+    asTime(val: Date | number, defaultValue?: string) {
+        let d: Date;
+        if(typeof val === "number")
+            d = new Date(val);
+        else if (!(val instanceof Date))
+            return defaultValue;
+        else d = val;
+        return d.toLocaleTimeString(this.locale);
+    }
+
+    /**
+     * Formats a Date or time number as a locale Date and Time string. 
+     * 
+     * @param val the Date to format
+     * @param defaultValue the default value if the formatting fails
+     * @returns formatted result. Example: asDate(new Date()) => "6/14/2019 1:22:37 PM"
+     */
+    asDateTime(val: Date | number, defaultValue?: string) {
+        let d: Date;
+        if(typeof val === "number")
+            d = new Date(val);
+        else if (!(val instanceof Date))
+            return defaultValue;
+        else d = val;
+        return `${d.toLocaleDateString(this.locale)} ${d.toLocaleTimeString(this.locale)}`;
+    }
+
+    /**
      * Formats a number/string as a phone number
      * 
      * @param val the number to format

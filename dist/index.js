@@ -70,6 +70,43 @@ var Formatter = /** @class */ (function () {
         }
     };
     /**
+     * Formats a Date or time number as a locale string.
+     *
+     * @param val the Date to format
+     * @param defaultValue the default value if the formatting fails
+     * @returns formatted result. Example: asDate(new Date()) => "6/14/2019"
+     */
+    Formatter.prototype.asDate = function (val, defaultValue) {
+        var d;
+        if (typeof val === "number")
+            d = new Date(val);
+        else if (!(val instanceof Date))
+            return defaultValue;
+        else
+            d = val;
+        return d.toLocaleDateString(this.locale);
+    };
+    Formatter.prototype.asTime = function (val, defaultValue) {
+        var d;
+        if (typeof val === "number")
+            d = new Date(val);
+        else if (!(val instanceof Date))
+            return defaultValue;
+        else
+            d = val;
+        return d.toLocaleTimeString(this.locale);
+    };
+    Formatter.prototype.asDateTime = function (val, defaultValue) {
+        var d;
+        if (typeof val === "number")
+            d = new Date(val);
+        else if (!(val instanceof Date))
+            return defaultValue;
+        else
+            d = val;
+        return d.toLocaleDateString(this.locale) + " " + d.toLocaleTimeString(this.locale);
+    };
+    /**
      * Formats a number/string as a phone number
      *
      * @param val the number to format

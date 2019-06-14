@@ -33,6 +33,16 @@ export declare class Formatter {
      */
     asFixed(val: number, decimals: number, useSeparator?: boolean, defaultValue?: string): string | undefined;
     /**
+     * Formats a Date or time number as a locale string.
+     *
+     * @param val the Date to format
+     * @param defaultValue the default value if the formatting fails
+     * @returns formatted result. Example: asDate(new Date()) => "6/14/2019"
+     */
+    asDate(val: Date | number, defaultValue?: string): string | undefined;
+    asTime(val: Date | number, defaultValue?: string): string | undefined;
+    asDateTime(val: Date | number, defaultValue?: string): string | undefined;
+    /**
      * Formats a number/string as a phone number
      *
      * @param val the number to format

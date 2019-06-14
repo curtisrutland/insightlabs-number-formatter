@@ -1,7 +1,7 @@
 {
   "name": "@insightlabs/number-formatter",
-  "version": "1.0.1",
-  "description": "Helper for formatting numbers as currency, fixed, or percentages. Also includes phone number.",
+  "version": "1.0.2",
+  "description": "Helper for formatting numbers as currency, fixed, or percentages. Also includes phone number and basic date formatting.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
